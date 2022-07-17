@@ -9,8 +9,39 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            MenuPage()
+                .tabItem {
+                    Image(systemName: "cup.and.saucer")
+                    Text("Home")
+                }
+            OfferPage()
+                .tabItem {
+                    Image(systemName: "tag")
+                    Text("Offers")
+                }
+            OrdersPage()
+                .tabItem {
+                    Image(systemName: "cart")
+                    Text("Orders")
+                }
+            InfoPage()
+                .tabItem {
+                    Image(systemName: "info")
+                    Text("Info")
+                }
+        }
+    }
+}
+
+struct Greeting: View {
+    @State var name = "unamed"
+    
+    var body: some View {
+        VStack {
+            TextField("Enter your name", text: $name)
+            Text("Hello \(name)")
+        }
     }
 }
 
