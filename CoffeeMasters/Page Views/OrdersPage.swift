@@ -23,7 +23,7 @@ struct OrdersPage: View {
                     List {
                         Section("ITEMS") {
                             ForEach(cartManager.cart, id:\.0.id) { item in
-                                OrderItem()
+                                OrderItem(item: (item.0, item.1))
                             }
                         }.listRowBackground(Color("Background"))
                                             
